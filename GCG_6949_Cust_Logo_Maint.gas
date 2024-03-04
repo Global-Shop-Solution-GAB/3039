@@ -1,0 +1,632 @@
+program.sub.screenSU.start
+gui.SS_Form1..create
+gui.SS_Form1..caption("COC Coverpage Cust Logo Maint")
+gui.SS_Form1..size(7215,6780)
+gui.SS_Form1..minx(0)
+gui.SS_Form1..miny(0)
+gui.SS_Form1..position(0,0)
+gui.SS_Form1..event(unload,SS_Form1_Unload)
+gui.SS_Form1..alwaysontop(False)
+gui.SS_Form1..fontname("Arial")
+gui.SS_Form1..fontsize(8)
+gui.SS_Form1..forecolor(0)
+gui.SS_Form1..fontstyle(,,,,)
+gui.SS_Form1..BackColor(-2147483633)
+gui.SS_Form1..controlbox(True)
+gui.SS_Form1..maxbutton(False)
+gui.SS_Form1..minbutton(False)
+gui.SS_Form1..mousepointer(0)
+gui.SS_Form1..moveable(True)
+gui.SS_Form1..sizeable(False)
+gui.SS_Form1..ShowInTaskBar(True)
+gui.SS_Form1..titlebar(True)
+
+gui.SS_Form1.lbl_txtCust.create(label,"Cust ID",True,1800,195,1,105,135,True,0,Arial,8,-2147483633,0 )
+gui.SS_Form1.lbl_txtCust.defaultvalue("")
+gui.SS_Form1.lbl_txtCust.controlgroup(0)
+gui.SS_Form1.txtCust.create(textbox,"",True,1155,330,0,105,330,True,0,Arial,8,16777215,1 )
+gui.SS_Form1.txtCust.event(gotfocus,txtCust_GotFocus)
+gui.SS_Form1.txtCust.maxLength(6)
+gui.SS_Form1.txtCust.event(lostfocus,txtCust_LostFocus)
+gui.SS_Form1.txtCust.defaultvalue("")
+gui.SS_Form1.txtCust.controlgroup(0)
+gui.SS_Form1.cmd_txtCust.create(button)
+gui.SS_Form1.cmd_txtCust.caption("^")
+gui.SS_Form1.cmd_txtCust.visible(True)
+gui.SS_Form1.cmd_txtCust.size(330,330)
+gui.SS_Form1.cmd_txtCust.zorder(0)
+gui.SS_Form1.cmd_txtCust.position(1440,330)
+gui.SS_Form1.cmd_txtCust.enabled(True)
+gui.SS_Form1.cmd_txtCust.fontname("Arial")
+gui.SS_Form1.cmd_txtCust.fontsize(8)
+gui.SS_Form1.cmd_txtCust.event(click,cmd_txtCust_Click)
+gui.SS_Form1.cmd_txtCust.defaultvalue("")
+gui.SS_Form1.cmd_txtCust.controlgroup(0)
+gui.SS_Form1.lbl_txtLoc.create(label,"Logo Path",True,1800,200,1,100,750,True,0,Arial,8,-2147483633,0 )
+gui.SS_Form1.lbl_txtLoc.defaultvalue("")
+gui.SS_Form1.lbl_txtLoc.controlgroup(0)
+gui.SS_Form1.txtLoc.create(textbox,"",True,6030,330,0,105,945,True,0,Arial,8,16777215,1 )
+gui.SS_Form1.txtLoc.defaultvalue("")
+gui.SS_Form1.txtLoc.controlgroup(0)
+gui.SS_Form1.cmd_txtLoc.create(button)
+gui.SS_Form1.cmd_txtLoc.caption("^")
+gui.SS_Form1.cmd_txtLoc.visible(True)
+gui.SS_Form1.cmd_txtLoc.size(330,330)
+gui.SS_Form1.cmd_txtLoc.zorder(0)
+gui.SS_Form1.cmd_txtLoc.position(6270,945)
+gui.SS_Form1.cmd_txtLoc.enabled(True)
+gui.SS_Form1.cmd_txtLoc.fontname("Arial")
+gui.SS_Form1.cmd_txtLoc.fontsize(8)
+gui.SS_Form1.cmd_txtLoc.event(click,cmd_txtLoc_Click)
+gui.SS_Form1.cmd_txtLoc.defaultvalue("")
+gui.SS_Form1.cmd_txtLoc.controlgroup(0)
+gui.SS_Form1.cmdSave.create(button)
+gui.SS_Form1.cmdSave.caption("Save")
+gui.SS_Form1.cmdSave.visible(True)
+gui.SS_Form1.cmdSave.size(1125,345)
+gui.SS_Form1.cmdSave.zorder(0)
+gui.SS_Form1.cmdSave.position(105,1365)
+gui.SS_Form1.cmdSave.enabled(True)
+gui.SS_Form1.cmdSave.fontname("Arial")
+gui.SS_Form1.cmdSave.fontsize(7)
+gui.SS_Form1.cmdSave.event(click,cmdsave_click)
+gui.SS_Form1.cmdSave.defaultvalue("")
+gui.SS_Form1.cmdSave.controlgroup(0)
+gui.SS_Form1.fgData.create(gsflexgrid)
+gui.SS_Form1.fgData.FixedRows(0)
+gui.SS_Form1.fgData.FixedCols(0)
+gui.SS_Form1.fgData.visible(True)
+gui.SS_Form1.fgData.size(6690,3225)
+gui.SS_Form1.fgData.zorder(0)
+gui.SS_Form1.fgData.position(105,1785)
+gui.SS_Form1.fgData.enabled(True)
+gui.SS_Form1.fgData.event(commandclick,fgData_CommandClick)
+gui.SS_Form1.txtDef.create(textbox,"",True,6030,300,0,105,5400,True,0,Arial,8,16777215,1 )
+gui.SS_Form1.txtDef.defaultvalue("")
+gui.SS_Form1.txtDef.controlgroup(0)
+gui.SS_Form1.lbl11.create(label,"Default Path",True,1500,300,1,155,5190,True,0,Arial,8,-2147483633,0 )
+gui.SS_Form1.lbl11.defaultvalue("")
+gui.SS_Form1.lbl11.controlgroup(0)
+gui.SS_Form1.cmdDef.create(button)
+gui.SS_Form1.cmdDef.caption("^")
+gui.SS_Form1.cmdDef.visible(True)
+gui.SS_Form1.cmdDef.size(330,330)
+gui.SS_Form1.cmdDef.zorder(0)
+gui.SS_Form1.cmdDef.position(6270,5370)
+gui.SS_Form1.cmdDef.enabled(True)
+gui.SS_Form1.cmdDef.fontname("Arial")
+gui.SS_Form1.cmdDef.fontsize(8)
+gui.SS_Form1.cmdDef.event(click,cmddef_click)
+gui.SS_Form1.cmdDef.defaultvalue("")
+gui.SS_Form1.cmdDef.controlgroup(0)
+gui.SS_Form1.cmdDelete.create(button)
+gui.SS_Form1.cmdDelete.caption("Delete")
+gui.SS_Form1.cmdDelete.visible(True)
+gui.SS_Form1.cmdDelete.size(1125,375)
+gui.SS_Form1.cmdDelete.zorder(0)
+gui.SS_Form1.cmdDelete.position(1295,1345)
+gui.SS_Form1.cmdDelete.enabled(True)
+gui.SS_Form1.cmdDelete.fontname("Arial")
+gui.SS_Form1.cmdDelete.fontsize(8)
+gui.SS_Form1.cmdDelete.event(click,cmddelete_click)
+gui.SS_Form1.cmdDelete.defaultvalue("")
+gui.SS_Form1.cmdDelete.controlgroup(0)
+gui.SS_Form1.txtCust.tabstop(True)
+gui.SS_Form1.txtCust.tabindex(1)
+gui.SS_Form1.cmd_txtCust.tabstop(True)
+gui.SS_Form1.cmd_txtCust.tabindex(2)
+gui.SS_Form1.txtLoc.tabstop(True)
+gui.SS_Form1.txtLoc.tabindex(4)
+gui.SS_Form1.cmd_txtLoc.tabstop(True)
+gui.SS_Form1.cmd_txtLoc.tabindex(5)
+gui.SS_Form1.cmdSave.tabstop(True)
+gui.SS_Form1.cmdSave.tabindex(6)
+gui.SS_Form1.txtDef.tabstop(True)
+gui.SS_Form1.txtDef.tabindex(8)
+program.sub.screenSU.end
+
+Program.Sub.Preflight.Start
+Variable.UDT.uCust.Define("Logo_Path",String,Logo_Path)
+Variable.UDT.uCust.Define("ID",String,ID)
+
+Variable.uGlobal.uCust.Declare("uCust")
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.bEx.Declare(Boolean)
+
+F.ODBC.Connection!conX.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+F.ODBC.Connection!conX.TableExists("GCG_6949_Cust_Logo",V.Local.bEx)
+F.Intrinsic.Control.If(V.Local.bEx,=,False)
+	F.Intrinsic.UI.Msgbox("Table GCG_6949_Cust_Logo not Found")
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+F.Intrinsic.Control.EndIf
+
+V.uGlobal.uCust.Redim(-1,-1)
+
+Function.Intrinsic.Control.CallSub(Buildstyle)
+Function.Intrinsic.Control.CallSub(Populate)
+
+Gui.SS_Form1..Show
+Gui.SS_Form1.txtCust.SetFocus
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_6949_Cust_Logo_Maint.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Main.End
+
+Program.Sub.SS_Form1_Unload.Start
+F.Intrinsic.Control.SetErrorHandler("SS_Form1_Unload_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+f.ODBC.Connection!conX.Close
+
+Function.Intrinsic.Control.End
+
+
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("SS_Form1_Unload_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_6949_Cust_Logo_Maint.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.End
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.SS_Form1_Unload.End
+
+Program.Sub.cmd_txtCust_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmd_txtCust_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+
+'Customer Browse
+F.Intrinsic.UI.Browser(205,"",V.Local.sRet)
+
+Function.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"***CANCEL***")
+	Function.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.SS_Form1.txtCust.Text(V.Local.sRet(0).Trim)
+	Function.Intrinsic.Control.CallSub(Loadcust)
+Function.Intrinsic.Control.EndIf
+
+
+
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_txtCust_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_6949_Cust_Logo_Maint.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.cmd_txtCust_Click.End
+
+Program.Sub.cmd_txtLoc_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmd_txtLoc_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sPath.Declare(String)
+
+'open up open file dialog
+F.Intrinsic.UI.ShowOpenFileDialog("","","2097152 ",V.Local.sPath)
+
+F.Intrinsic.Control.If(V.Local.sPath.Trim,=,"","OR",V.Local.sPath.Trim,=,"***CANCEL***")
+	Gui.SS_Form1.txtLoc.Text("")
+F.Intrinsic.Control.Else
+	F.Intrinsic.File.GetUNCName(V.Local.sPath,V.Local.sPath)
+	Gui.SS_Form1.txtLoc.Text(V.Local.sPath)
+F.Intrinsic.Control.EndIf
+
+
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmd_txtLoc_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_6949_Cust_Logo_Maint.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.cmd_txtLoc_Click.End
+
+Program.Sub.txtCust_GotFocus.Start
+F.Intrinsic.Control.SetErrorHandler("txtCust_GotFocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+
+Gui.SS_Form1.txtCust.SelectAll
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtCust_GotFocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_6949_Cust_Logo_Maint.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.txtCust_GotFocus.End
+
+Program.Sub.txtCust_LostFocus.Start
+F.Intrinsic.Control.SetErrorHandler("txtCust_LostFocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+
+Function.Intrinsic.Control.CallSub(loadcust)
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtCust_LostFocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_6949_Cust_Logo_Maint.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.txtCust_LostFocus.End
+
+Program.Sub.fgData_CommandClick.Start
+F.Intrinsic.Control.SetErrorHandler("fgData_CommandClick_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+
+F.Intrinsic.Control.If(V.Args.column,>,0)
+	Gui.SS_Form1.fgData.ReadRow(V.Args.key,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		Gui.SS_Form1.txtCust.Text(V.Local.sRet(0).Trim)
+		Gui.SS_Form1.txtLoc.Text(V.Local.sRet(1).Trim)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("fgData_CommandClick_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_6949_Cust_Logo_Maint.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.fgData_CommandClick.End
+
+Program.Sub.LoadCust.Start
+F.Intrinsic.Control.SetErrorHandler("LoadCust_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sRet.Declare(String)
+
+'do we have a record to use?
+F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uCust!ID,V.Screen.SS_Form1!txtCust.Text,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet.Trim,=,"")
+	Gui.SS_Form1.txtLoc.Text("")
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.SS_Form1.txtLoc.Text(V.uGlobal.uCust(v.Local.sRet(0))!Logo_Path)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("LoadCust_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_6949_Cust_Logo_Maint.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.LoadCust.End
+
+Program.Sub.Buildstyle.Start
+F.Intrinsic.Control.SetErrorHandler("Buildstyle_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.ic.Declare(Long)
+
+Gui.SS_Form1.fgData.Cols(3)
+Gui.SS_Form1.fgData.Rows(1)
+Gui.SS_Form1.fgData.Rows(2)
+Gui.SS_Form1.fgData.FixedRows(1)
+
+Gui.SS_Form1.fgData.SetColumnPercentages(".13:.77:.08")
+
+
+Gui.SS_Form1.fgData.TextMatrix(0,0,"ID")
+Gui.SS_Form1.fgData.TextMatrix(1,0,"Logo Path")
+
+F.Intrinsic.Control.For(V.Local.ic,0,2,1)
+	Gui.SS_Form1.fgData.BuildStyle(1,V.Local.ic,"Fontstyle","Bold",True)
+	Gui.SS_Form1.fgData.BuildStyle(1,V.Local.ic,"Type","Locked",True)
+	Gui.SS_Form1.fgData.BuildStyle(1,V.Local.ic,"Format","Alignment",4)
+	
+	Function.Intrinsic.Control.If(V.Local.ic,<,2)
+		Gui.SS_Form1.fgData.BuildStyle(2,V.Local.ic,"Type","Locked",True)
+		Gui.SS_Form1.fgData.BuildStyle(2,V.Local.ic,"Format","Alignment",2)
+	Function.Intrinsic.Control.Else
+		Gui.SS_Form1.fgData.BuildStyle(2,V.Local.ic,"Type","Command","Edit")
+	Function.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.ic)
+Gui.SS_Form1.fgData.ApplyStyle(0,1)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Buildstyle_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_6949_Cust_Logo_Maint.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Buildstyle.End
+
+Program.Sub.Populate.Start
+F.Intrinsic.Control.SetErrorHandler("Populate_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+'have to open it in read write since we use long var char (dumb)
+F.ODBC.Connection!conX.OpenLocalRecordsetRW("rst","Select * From GCG_6949_Cust_Logo Where ID <> '-1'")
+F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+	F.Intrinsic.Variable.LoadUDTFromRecordset("conx","rst","v.uglobal.uCust",False)
+	F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uCust!ID,0)
+	Gui.SS_Form1.fgData.Visible(False)
+	Gui.SS_Form1.fgData.LoadFromUDT("v.uglobal.uCust","ID*!*Logo_Path",2)
+	Gui.SS_Form1.fgData.Visible(True)
+F.Intrinsic.Control.EndIf
+F.ODBC.conX!rst.Close
+
+'get default
+F.ODBC.Connection!conX.OpenLocalRecordsetRO("rst","Select Logo_Path From GCG_6949_Cust_Logo Where ID = '-1'")
+F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,False)
+	Gui.SS_Form1.txtDef.Text(V.ODBC.conX!rst.FieldValTrim!Logo_Path)
+F.Intrinsic.Control.Else
+	Gui.SS_Form1.txtDef.Text("")
+F.Intrinsic.Control.EndIf
+
+
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Populate_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_6949_Cust_Logo_Maint.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Populate.End
+
+program.sub.cmdsave_click.start
+F.Intrinsic.Control.SetErrorHandler("cmdsave_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSQL.Declare(String)
+V.Local.sRet.Declare(String)
+V.Local.iUB.Declare(Long)
+V.Local.bEx.Declare(Boolean)
+
+'F.Intrinsic.Control.If(v.Screen.SS_Form1!txtCust.Text.trim,=,"")
+'	F.Intrinsic.UI.Msgbox("Customer ID must be entered.")
+'	Gui.SS_Form1.txtCust.SetFocus
+'	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.EndIf
+'
+'F.Intrinsic.Control.If(v.Screen.SS_Form1!txtLoc.Text.trim,=,"")
+'	F.Intrinsic.UI.Msgbox("Enter Logo Path")
+'	Gui.SS_Form1.cmd_txtLoc.SetFocus
+'	F.Intrinsic.Control.ExitSub
+'F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(v.Screen.SS_Form1!txtCust.Text.trim,<>,"","AND",v.Screen.SS_Form1!txtLoc.Text.trim,<>,"")
+	'make sure path exists as file
+	f.Intrinsic.File.Exists(v.Screen.SS_Form1!txtLoc.Text.trim,v.Local.bEx)
+	F.Intrinsic.Control.If(V.Local.bEx,=,False)
+		F.Intrinsic.UI.Msgbox("Customer Logo file not found. Check path and try again.")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+
+'saveittoourtable.	
+'saveittoourtable.
+	F.Intrinsic.String.Build("Select * From GCG_6949_Cust_Logo Where ID = '{0}'",V.Screen.SS_Form1!txtCust.Text,V.Local.sSQL)
+	F.ODBC.Connection!conX.OpenLocalRecordsetRW("rst",V.Local.sSQL)
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,True)
+		'means we add it
+		F.ODBC.conX!rst.AddNew
+		f.ODBC.conX!rst.Set!ID(v.Screen.SS_Form1!txtCust.Text.trim)
+		f.ODBC.conX!rst.Set!Logo_Path(v.Screen.SS_Form1!txtLoc.Text.trim)
+
+		'add to our udt
+		F.Intrinsic.Control.If(V.uGlobal.uCust.UBound,=,-1)
+			V.uGlobal.uCust.Redim(0,0)
+			V.Local.iUB.Set(0)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Add(V.uGlobal.uCust.UBound,1,V.Local.iUB)
+			V.uGlobal.uCust.RedimPreserve(0,V.Local.iUB)
+		F.Intrinsic.Control.EndIf
+		v.uGlobal.uCust(v.Local.iUB)!ID.Set(v.Screen.SS_Form1!txtCust.Text.trim)
+		V.uGlobal.uCust(v.Local.iUB)!Logo_Path.Set(V.Screen.SS_Form1!txtLoc.Text.Trim)
+	F.Intrinsic.Control.Else
+		f.ODBC.conX!rst.Set!Logo_Path(v.Screen.SS_Form1!txtLoc.Text.trim)
+		'we already have this record.
+		'find it
+		F.Intrinsic.Variable.UDTMultiSeek(V.uGlobal.uCust!ID,V.Screen.SS_Form1!txtCust.Text,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet.Trim,<>,"")
+			F.Intrinsic.String.Split(V.Local.sret,"*!*",V.Local.sRet)
+			V.uGlobal.uCust(v.Local.sRet(0))!Logo_Path.Set(V.Screen.SS_Form1!txtLoc.Text)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Update
+	F.ODBC.conX!rst.Close
+
+	F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uCust!ID,0)
+	Gui.SS_Form1.fgData.Visible(False)
+	Gui.SS_Form1.fgData.LoadFromUDT("v.uglobal.uCust","ID*!*Logo_Path",2)
+	Gui.SS_Form1.fgData.Visible(True)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.If(v.Screen.SS_Form1!txtdef.Text.trim,<>,"")
+
+	'make sure path exists as file 
+	f.Intrinsic.File.Exists(v.Screen.SS_Form1!txtdef.Text.trim,v.Local.bEx)
+	F.Intrinsic.Control.If(V.Local.bEx,=,False)
+		F.Intrinsic.UI.Msgbox("Default Logo file not found. Check path and try again.")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+
+
+	'also save our default path
+	F.ODBC.Connection!conX.OpenLocalRecordsetRW("rst","Select * From GCG_6949_Cust_Logo Where ID = '-1'")
+	F.Intrinsic.Control.If(V.ODBC.conX!rst.EOF,=,True)
+		F.ODBC.conX!rst.AddNew
+		F.ODBC.conX!rst.Set!ID("-1")
+	F.Intrinsic.Control.EndIf
+	F.ODBC.conX!rst.Set!Logo_Path(V.Screen.SS_Form1!txtdef.Text)
+	F.ODBC.conX!rst.Update
+	F.ODBC.conX!rst.Close
+F.Intrinsic.Control.EndIf
+
+Gui.SS_Form1.txtCust.Text("")
+Gui.SS_Form1.txtLoc.Text("")
+Gui.SS_Form1.txtCust.SetFocus
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdsave_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_6949_Cust_Logo_Maint.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	Function.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmdsave_click.end
+
+program.sub.cmddef_click.start
+F.Intrinsic.Control.SetErrorHandler("cmddef_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sPath.Declare(String)
+
+'open up open file dialog
+F.Intrinsic.UI.ShowOpenFileDialog("","","2097152 ",V.Local.sPath)
+
+F.Intrinsic.Control.If(V.Local.sPath.Trim,=,"***CANCEL***","OR",V.Local.sPath.Trim,=,"")
+	Gui.SS_Form1.txtDef.Text("")
+F.Intrinsic.Control.Else
+	F.Intrinsic.File.GetUNCName(V.Local.sPath,V.Local.sPath)
+	Gui.SS_Form1.txtdef.Text(V.Local.sPath)
+F.Intrinsic.Control.EndIf
+
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmddef_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_6949_Cust_Logo_Maint.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(Ss_form1_unload)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmddef_click.end
+
+program.sub.cmddelete_click.start
+F.Intrinsic.Control.SetErrorHandler("cmddelete_click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+V.Local.sSQL.Declare(String)
+f.Intrinsic.Control.If(v.Screen.SS_Form1!txtCust.Text.trim,<>,"")
+	f.Intrinsic.String.Build("Delete From GCG_6949_Cust_Logo Where ID = '{0}' ",v.Screen.SS_Form1!txtCust.Text.trim,v.Local.sSQL)
+	F.ODBC.Connection!conX.Execute(V.Local.sSQL)
+	f.Intrinsic.Variable.UDTMultiFlag(v.uGlobal.uCust!ID,v.Screen.SS_Form1!txtCust.Text.trim)
+	F.Intrinsic.Variable.UDTDeleteFlagged(V.uGlobal.uCust)
+	F.Intrinsic.Variable.UDTMultiQuickSort(V.uGlobal.uCust!ID,0)
+	Gui.SS_Form1.fgData.Visible(False)
+	Gui.SS_Form1.fgData.LoadFromUDT("v.uglobal.uCust","ID*!*Logo_Path",2)
+	Gui.SS_Form1.fgData.Visible(True)
+	Gui.SS_Form1.txtCust.Text("")
+	Gui.SS_Form1.txtLoc.Text("")
+	Gui.SS_Form1.txtCust.SetFocus
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmddelete_click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_6949_Cust_Logo_Maint.gas",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+Function.Intrinsic.Control.EndIf
+
+
+program.sub.cmddelete_click.end
+
+Program.Sub.Comments.Start
+${$0$}$$}$TRT$}$11/7/2015 1:44:53 PM
+${$3$}$0$}$$}$0$}$-1$}$$}$12:00:00 AM$}$Quote 6949
+Coded TRT
+11/5/15
+Table: GCG_6949_Cust_Logo
+
+A maintenance program will be created that will be used to specify a customer code and specify a logo location that will be used on the coversheet.
+
+It will have a textbox with browser to select a customer code.
+It will have another textbox and browser for the file location of the Logo that should be used.
+
+For those customers that don’t have a different logo a separate default logo path will also be present on the screen that will be a “catch all” logo for customers who don’t have a custom logo.
+Program.Sub.Comments.End
+Program.Sub.ScreenSS.Start
+SS_Form1{{CAPTION::COC Coverpage Cust Logo Maint
+SS_Form1.CTRL{{NAME::txtCust\\TYPE::2\\CAPTION::Cust ID\\GROUP::-1\\BROWSER::1\\SIZE::1
+SS_Form1.CTRL{{NAME::txtLoc\\TYPE::2\\CAPTION::Logo Path\\GROUP::-1\\BROWSER::1\\SIZE::2.5
+
+Program.Sub.ScreenSS.End
+
+
+
